@@ -1,6 +1,8 @@
 var pageCounter = 1;
 var moduleContainer = document.getElementById('module-info');
-var btn = document.getElementById("btn");
+var btnUG = document.getElementById("btn");
+var btnPG = document.getElementById("btn");
+var btnPhD = document.getElementById("btn");
 
 btn.addEventListener("click", function(){
   var ourRequest = new XMLHttpRequest();

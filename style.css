@@ -31,4 +31,16 @@ li a {
 
 .button {
     position: center;
+    background-color: #b135ca;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    padding: 10px 25px;
+    border: none;
+    border: 1px solid black; 
+}
+
+.button:hover{
+    background-color: #671e75;
 }
