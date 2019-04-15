@@ -2,19 +2,19 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 <head>
     <title>Coursework2_WebApp</title>
+    
+    <script src="main.js"></script>
+</head>
+
+<body>
     <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="undergraduate.html">Undergraduate Data</a></li>
         <li><a class="active" href="postgraduate.html">Postgraduate Data</a></li>
         <li><a href="phd.html">Research Data</a></li>
     </ul>
-
-</head>
-
-<body>
-    <script src="main.js"></script>
     <div class="dataButton">
-            <button class="button" type="button" id="undergraduateButton">Retrieve Postgraduate Data</button>
+        <button class="button" type="button" onclick="handleButtonClick(2)" id="postgraduateButton">Retrieve Postgraduate Data</button>
     </div>
 </body>
 

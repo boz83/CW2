@@ -1,66 +1,72 @@
-var pageCounter = 1;
-var moduleContainer = document.getElementById('module-info');
-var btnUG = document.getElementById("btn");
-var btnPG = document.getElementById("btn");
-var btnPhD = document.getElementById("btn");
+const handleButtonClick = (type) => {    
+    fetch(`https://raw.githubusercontent.com/boz83/CW2/master/module-${type}.json`)
+    .then(response => response.json())
+    .then(data => {
+        const moduleBody = document.getElementById('module-table-body')
+        const moduleHead = document.getElementById('module-table-header')
+        const headerRow = document.createElement('tr');
+        if(!data.length) return;
+        const keys = Object.keys(data[0]);
+        keys.forEach(key => {
+            const headerCell = document.createElement("td");
+            headerCell.append(key);
+            headerRow.append(headerCell);
+        });
+        while(moduleHead.firstChild) moduleHead.removeChild(moduleHead.firstChild);
+        while(moduleBody.firstChild) moduleBody.removeChild(moduleBody.firstChild);
 
-btn.addEventListener("click", function(){
-  var ourRequest = new XMLHttpRequest();
-  ourRequest.open('GET', 'https://raw.githubusercontent.com/profharimohanpandey/CW2/master/module-'+ pageCounter +'.json');
-  ourRequest.onload = function(){
-    //console.log(ourRequest.responseText);
-    var ourData = JSON.parse(ourRequest.responseText);
-    //console.log(ourData[0]);
-    renderHTML(ourData);
-  };
-  ourRequest.send();
-pageCounter++;
-if (pageCounter > 3){
-//btn.classList.add("hide-me");
-  btn.disabled = true;
-}
-});
+        moduleHead.append(headerRow);
 
-function renderHTML(data){
-  var htmlString = "";
 
-  for(i = 0; i < data.length; i++){
-    htmlString += "<p>" + data[i].Name + " is a " + data[i].Course + " has assements "; //".</p>";
-    for(ii = 0; ii < data[i].Module.Assignment.length; ii++){
-      if (ii == 0){
-        htmlString += data[i].Module.Assignment[ii];
-      } else {
-        htmlString += " and " + data[i].Module.Assignment[ii];
-      }
-    }
-    htmlString += ' and Learning Outcome ';
-    for(ii = 0; ii < data[i].Module.Learning_outcomes.length; ii++){
-      if (ii == 0){
-        htmlString += data[i].Module.Learning_outcomes[ii];
-      } else {
-        htmlString += " and " + data[i].Module.Learning_outcomes[ii];
-      }
-    }
+        data.forEach(course => {
+            const bodyRow = document.createElement('tr');
+            const values = Object.values(course);
+            values.forEach((value, index) => {
+                const bodyCell = document.createElement('td');
+            
+                if(keys[index] === "Module")
+                {
+                    const innerTable = document.createElement("table");
+                    const innerTableBody = document.createElement('tbody');
+                    const innerTableHead = document.createElement('thead');
+                    innerTable.append(innerTableHead);
+                    innerTable.append(innerTableBody);
+             
+                    const trHead = document.createElement('tr')
+                    innerTableHead.append(trHead);
 
-    htmlString += ' and Volume ';
-    for(ii = 0; ii < data[i].Module.Volume.length; ii++){
-      if (ii == 0){
-        htmlString += data[i].Module.Volume[ii];
-      } else {
-        htmlString += " and " + data[i].Module.Volume[ii];
-      }
-    }
+                    Object.keys(value).forEach(key => {
+                        const cell = document.createElement('td');
+                        cell.append(key.replace('_', " "));
+                        trHead.append(cell);
+                    })
 
-    htmlString += ' and weights ';
-    for(ii = 0; ii < data[i].Module.weights.length; ii++){
-      if (ii == 0){
-        htmlString += data[i].Module.weights[ii];
-      } else {
-        htmlString += " and " + data[i].Module.weights[ii];
-      }
-    }
-    htmlString += '.</p>';
-  }
-  moduleContainer.insertAdjacentHTML('beforeend', htmlString);
+                    value.Assignment.forEach((ass, aInd) => {
+                        const innerTableRow = document.createElement('tr');
+                        const assignmentCell = document.createElement('td');
+                        const weightingCell = document.createElement('td');
+                        const learningOutcomeCell = document.createElement('td');
+                        const volumeCell = document.createElement('td');
 
+                        assignmentCell.append(ass);
+                        weightingCell.append(value.weights[aInd]);
+                        volumeCell.append(value.Volume[aInd]);
+                        learningOutcomeCell.append(value["Learning_outcomes"][aInd]);
+
+                        innerTableRow.append(assignmentCell);
+                        innerTableRow.append(learningOutcomeCell);
+                        innerTableRow.append(volumeCell);
+                        innerTableRow.append(weightingCell);
+
+                        innerTableBody.append(innerTableRow);
+                    })
+                    bodyCell.append(innerTable);
+                }
+                else bodyCell.append(value);
+
+                bodyRow.append(bodyCell);
+            })
+            document.getElementById('module-table-body').append(bodyRow);
+        })
+    });
 }

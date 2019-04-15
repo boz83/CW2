@@ -1,21 +1,29 @@
 <html>
-    <link rel="stylesheet" type="text/css" href="style.css">
-<head>
-    <title>Coursework2_WebApp</title>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a class="active" href="undergraduate.html">Undergraduate Data</a></li>
-        <li><a href="postgraduate.html">Postgraduate Data</a></li>
-        <li><a href="phd.html">Research Data</a></li>
-    </ul>
-
-</head>
-
+    <head>
+        <title>Coursework2_WebApp</title>
+        <link rel="stylesheet" type="text/css" href="style.css">    
+        <script src="main.js"></script>
+    </head>
 <body>
-    <script src="main.js"></script>
-    <div class="dataButton">
-        <button class="button" type="button" id="undergraduateButton">Retrieve Undergraduate Data</button>
-    </div>
-    </body>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a class="active" href="undergraduate.html">Undergraduate Data</a></li>
+            <li><a href="postgraduate.html">Postgraduate Data</a></li>
+            <li><a href="phd.html">Research Data</a></li>
+        </ul>
+        <div id="module-info" class="module-container">
+            <div class="dataButton" id="dataButton">
+                <button class="button" type="button" onclick="handleButtonClick(1)">Retrieve Undergraduate Data</button>
+            </div>
+            <table>
+                <thead id="module-table-header">
+                    
+                </thead>
+                <tbody id="module-table-body">
 
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
 </html>

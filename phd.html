@@ -1,19 +1,18 @@
 <html>
-    <link rel="stylesheet" type="text/css" href="style.css">
 <head>
-    <title>Coursework2_WebApp</title>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="undergraduate.html">Undergraduate Data</a></li>
-        <li><a href="postgraduate.html">Postgraduate Data</a></li>
-        <li><a class="active" href="phd.html">Research Data</a></li>
-    </ul>
-
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Coursework2_WebApp</title>
 </head>
 
 <body>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="undergraduate.html">Undergraduate Data</a></li>
+            <li><a href="postgraduate.html">Postgraduate Data</a></li>
+            <li><a class="active" href="phd.html">Research Data</a></li>
+        </ul>
     <div class="dataButton">
-        <button class="button" type="button" id="undergraduateButton">Retrieve PhD & Research Data</button>
+        <button class="button" type="button" onclick="handleButtonClick(3)">Retrieve PhD & Research Data</button>
     </div>
 </body>
 
