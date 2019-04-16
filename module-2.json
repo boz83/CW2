@@ -1,33 +1,22 @@
 [
   {
-    "Name": "Undergraduate",
-    "Course":"Web Development",
+    "Name": "Ethical Hacking",
+    "Course":"MSc Cyber Security",
     "Module": {
       "Learning_outcomes":["LO1", "LO2"],
       "Assignment":["CW1", "CW2"],
-      "Volume":["1000 words", "4000 words"],
-      "weights":["20%", "80%"]
+      "Volume":["5000 words", "4000 words"],
+      "Weights":["60%", "40%"]
     }
   },
   {
-    "Name": "Post-Graduate",
-    "Course":"Big Data",
+    "Name": "Encryption and Hashing",
+    "Course":"MSc Cyber Security",
     "Module": {
     "Learning_outcomes":["LO1", "LO2"],
     "Assignment":["CW1", "CW2"],
-    "Volume":["1000 words", "4000 words"],
-    "weights":["20%", "80%"]
+    "Volume":["2000 words", "6000 words"],
+    "Weights":["30%", "70%"]
     }
-  },
-  {
-    "Name": "Research",
-    "Course":"Data Mining",
-    "Module": {
-      "Learning_outcomes":["LO1", "LO2"],
-      "Assignment":["CW1", "CW2"],
-      "Volume":["1000 words", "4000 words"],
-      "weights":["20%", "80%"]
-    }
-    
   }
 ]
