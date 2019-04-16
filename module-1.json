@@ -5,7 +5,7 @@
     "Module": {
       "Learning_outcomes":["LO1", "LO2"],
       "Assignment":["CW1", "CW2"],
-      "Volume":["10 Weekly Tasks", "Web-based Questionairre system & 4000 word documentation"],
+      "Volume":["1000 Words", "4000 Words"],
       "Weights":["20%", "80%"]
     }
   },
@@ -15,7 +15,7 @@
     "Module": {
     "Learning_outcomes":["LO1", "LO2"],
     "Assignment":["CW1", "CW2"],
-    "Volume":["10 Weekly Tasks", "Deployed website + 4000 word report"],
+    "Volume":["1000 Words", "4000 Words"],
     "Weights":["20%", "80%"]
     }
   },
@@ -25,8 +25,8 @@
     "Module": {
       "Learning_outcomes":["LO1", "LO2"],
       "Assignment":["CW1", "CW2"],
-      "Volume":["1000 words", "4000 words"],
-      "Weights":["20%", "80%"]
+      "Volume":["4000 words", "4000 words"],
+      "Weights":["50%", "50%"]
     }
   }
   
