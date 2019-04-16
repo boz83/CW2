@@ -6,7 +6,7 @@
       "Learning_outcomes":["LO1", "LO2"],
       "Assignment":["CW1", "CW2"],
       "Volume":["5000 words", "4000 words"],
-      "Weights":["60%", "40%"]
+      "weights":["60%", "40%"]
     }
   },
   {
@@ -16,7 +16,7 @@
     "Learning_outcomes":["LO1", "LO2"],
     "Assignment":["CW1", "CW2"],
     "Volume":["2000 words", "6000 words"],
-    "Weights":["30%", "70%"]
+    "weights":["30%", "70%"]
     }
   }
 ]
