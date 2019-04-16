@@ -1,33 +1,34 @@
 [
-  {
-    "Name": "CIS2167: Server Side Scripting",
-    "Course":"Web Design & Development",
-    "Module": {
+    {
+      "Name": "CIS2167: Server Side Scripting",
+      "Course":"Web Design & Development",
+      "Module": {
+        "Learning_outcomes":["LO1", "LO2"],
+        "Assignment":["CW1", "CW2"],
+        "Volume":["1000 words", "4000 words"],
+        "weights":["20%", "80%"]
+      }
+    },
+    {
+      "Name": "CIS2169: Web Application Development",
+      "Course":"Web Design & Development",
+      "Module": {
       "Learning_outcomes":["LO1", "LO2"],
       "Assignment":["CW1", "CW2"],
       "Volume":["1000 words", "4000 words"],
       "weights":["20%", "80%"]
+      }
+    },
+    {
+      "Name": "BUS2031: Retail Marketing Planning",
+      "Course":"Marketing",
+      "Module": {
+        "Learning_outcomes":["LO1", "LO2"],
+        "Assignment":["CW1", "CW2"],
+        "Volume":["4000 words", "4000 words"],
+        "weights":["50%", "50%"]
+      }
     }
-  },
-  {
-    "Name": "CIS2169: Web Application Development",
-    "Course":"Web Design & Development",
-    "Module": {
-    "Learning_outcomes":["LO1", "LO2"],
-    "Assignment":["CW1", "CW2"],
-    "Volume":["1000 words", "4000 words"],
-    "weights":["20%", "80%"]
-    }
-  },
-  {
-    "Name": "BUS2031: Retail Marketing Planning",
-    "Course":"Marketing",
-    "Module": {
-      "Learning_outcomes":["LO1", "LO2"],
-      "Assignment":["CW1", "CW2"],
-      "Volume":["4000 words", "4000 words"],
-      "weights":["50%", "50%"]
-    }
-  }
+    
+  ]
   
-]
