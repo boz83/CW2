@@ -1,32 +1,32 @@
 [
   {
-    "Name": "Undergraduate",
-    "Course":"Web Development",
+    "Name": "CIS2167: Server & Client Side Scripting",
+    "Course":"Web Design & Development",
     "Module": {
       "Learning_outcomes":["LO1", "LO2"],
       "Assignment":["CW1", "CW2"],
-      "Volume":["1000 words", "4000 words"],
-      "weights":["20%", "80%"]
+      "Volume":["10 Weekly Tasks", "Web-based Questionairre system & 4000 word documentation"],
+      "Weights":["20%", "80%"]
     }
   },
   {
-    "Name": "Post-Graduate",
-    "Course":"Big Data",
+    "Name": "CIS2169: Web Application Development",
+    "Course":"Web Design & Development",
     "Module": {
     "Learning_outcomes":["LO1", "LO2"],
     "Assignment":["CW1", "CW2"],
-    "Volume":["1000 words", "4000 words"],
-    "weights":["20%", "80%"]
+    "Volume":["10 Weekly Tasks", "Deployed website + 4000 word report"],
+    "Weights":["20%", "80%"]
     }
   },
   {
-    "Name": "Research",
-    "Course":"Data Mining",
+    "Name": "BUS2031: Retail Marketing Planning",
+    "Course":"Marketing",
     "Module": {
       "Learning_outcomes":["LO1", "LO2"],
       "Assignment":["CW1", "CW2"],
       "Volume":["1000 words", "4000 words"],
-      "weights":["20%", "80%"]
+      "Weights":["20%", "80%"]
     }
   }
   
