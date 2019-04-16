@@ -2,6 +2,7 @@
 <head>
         <link rel="stylesheet" type="text/css" href="style.css">
         <title>Coursework2_WebApp</title>
+        <script src="main.js"></script>
 </head>
 
 <body>
@@ -11,9 +12,17 @@
             <li><a href="postgraduate.html">Postgraduate Data</a></li>
             <li><a class="active" href="phd.html">Research Data</a></li>
         </ul>
-    <div class="dataButton">
+    <div class="dataButton" id="dataButton">
         <button class="button" type="button" onclick="handleButtonClick(3)">Retrieve PhD & Research Data</button>
     </div>
+    <table>
+        <thead id="module-table-header">
+            
+        </thead>
+        <tbody id="module-table-body">
+
+        </tbody>
+    </table>
 </body>
 
 </html>

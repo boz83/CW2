@@ -17,7 +17,6 @@ const handleButtonClick = (type) => {
 
         moduleHead.append(headerRow);
 
-
         data.forEach(course => {
             const bodyRow = document.createElement('tr');
             const values = Object.values(course);
