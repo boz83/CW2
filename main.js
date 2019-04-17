@@ -1,71 +1,70 @@
-const handleButtonClick = (type) => {    
+const handleButtonClick = (type) => {
     fetch(`https://raw.githubusercontent.com/boz83/CW2/master/module-${type}.json`)
-    .then(response => response.json())
-    .then(data => {
-        const moduleBody = document.getElementById('module-table-body')
-        const moduleHead = document.getElementById('module-table-header')
-        const headerRow = document.createElement('tr');
-        if(!data.length) return;
-        const keys = Object.keys(data[0]);
-        keys.forEach(key => {
-            const headerCell = document.createElement("td");
-            headerCell.append(key);
-            headerRow.append(headerCell);
-        });
-        while(moduleHead.firstChild) moduleHead.removeChild(moduleHead.firstChild);
-        while(moduleBody.firstChild) moduleBody.removeChild(moduleBody.firstChild);
+        .then(response => response.json())
+        .then(data => {
+            const moduleBody = document.getElementById('module-table-body')
+            const moduleHead = document.getElementById('module-table-header')
+            const headerRow = document.createElement('tr');
+            if (!data.length) return;
+            const keys = Object.keys(data[0]);
+            keys.forEach(key => {
+                const headerCell = document.createElement("td");
+                headerCell.append(key);
+                headerRow.append(headerCell);
+            });
+            while (moduleHead.firstChild) moduleHead.removeChild(moduleHead.firstChild);
+            while (moduleBody.firstChild) moduleBody.removeChild(moduleBody.firstChild);
 
-        moduleHead.append(headerRow);
+            moduleHead.append(headerRow);
 
-        data.forEach(course => {
-            const bodyRow = document.createElement('tr');
-            const values = Object.values(course);
-            values.forEach((value, index) => {
-                const bodyCell = document.createElement('td');
-            
-                if(keys[index] === "Module")
-                {
-                    const innerTable = document.createElement("table");
-                    const innerTableBody = document.createElement('tbody');
-                    const innerTableHead = document.createElement('thead');
-                    innerTable.append(innerTableHead);
-                    innerTable.append(innerTableBody);
-             
-                    const trHead = document.createElement('tr')
-                    innerTableHead.append(trHead);
+            data.forEach(course => {
+                const bodyRow = document.createElement('tr');
+                const values = Object.values(course);
+                values.forEach((value, index) => {
+                    const bodyCell = document.createElement('td');
 
-                    Object.keys(value).forEach(key => {
-                        const cell = document.createElement('td');
-                        cell.append(key.replace('_', " "));
-                        trHead.append(cell);
-                    })
+                    if (keys[index] === "Module") {
+                        const innerTable = document.createElement("table");
+                        const innerTableBody = document.createElement('tbody');
+                        const innerTableHead = document.createElement('thead');
+                        innerTable.append(innerTableHead);
+                        innerTable.append(innerTableBody);
 
-                    value.Assignment.forEach((ass, aInd) => {
-                        const innerTableRow = document.createElement('tr');
-                        const assignmentCell = document.createElement('td');
-                        const weightingCell = document.createElement('td');
-                        const learningOutcomeCell = document.createElement('td');
-                        const volumeCell = document.createElement('td');
+                        const trHead = document.createElement('tr')
+                        innerTableHead.append(trHead);
 
-                        assignmentCell.append(ass);
-                        weightingCell.append(value.weights[aInd]);
-                        volumeCell.append(value.Volume[aInd]);
-                        learningOutcomeCell.append(value["Learning_outcomes"][aInd]);
+                        Object.keys(value).forEach(key => {
+                            const cell = document.createElement('td');
+                            cell.append(key.replace('_', " "));
+                            trHead.append(cell);
+                        })
 
-                        innerTableRow.append(assignmentCell);
-                        innerTableRow.append(learningOutcomeCell);
-                        innerTableRow.append(volumeCell);
-                        innerTableRow.append(weightingCell);
+                        value.Assignment.forEach((ass, aInd) => {
+                            const innerTableRow = document.createElement('tr');
+                            const assignmentCell = document.createElement('td');
+                            const weightingCell = document.createElement('td');
+                            const learningOutcomeCell = document.createElement('td');
+                            const volumeCell = document.createElement('td');
 
-                        innerTableBody.append(innerTableRow);
-                    })
-                    bodyCell.append(innerTable);
-                }
-                else bodyCell.append(value);
+                            assignmentCell.append(ass);
+                            weightingCell.append(value.weights[aInd]);
+                            volumeCell.append(value.Volume[aInd]);
+                            learningOutcomeCell.append(value["Learning_outcomes"][aInd]);
 
-                bodyRow.append(bodyCell);
+                            innerTableRow.append(assignmentCell);
+                            innerTableRow.append(learningOutcomeCell);
+                            innerTableRow.append(volumeCell);
+                            innerTableRow.append(weightingCell);
+
+                            innerTableBody.append(innerTableRow);
+                        })
+                        bodyCell.append(innerTable);
+                    }
+                    else bodyCell.append(value);
+
+                    bodyRow.append(bodyCell);
+                })
+                document.getElementById('module-table-body').append(bodyRow);
             })
-            document.getElementById('module-table-body').append(bodyRow);
-        })
-    });
+        });
 }

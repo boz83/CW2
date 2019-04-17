@@ -1,28 +1,31 @@
 <html>
+
 <head>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <title>Coursework2_WebApp</title>
-        <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Coursework2_WebApp</title>
+    <script src="main.js"></script>
 </head>
 
 <body>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="undergraduate.html">Undergraduate Data</a></li>
-            <li><a href="postgraduate.html">Postgraduate Data</a></li>
-            <li><a class="active" href="phd.html">Research Data</a></li>
-        </ul>
-    <div class="dataButton" id="dataButton">
-        <button class="button" type="button" onclick="handleButtonClick(3)">Retrieve PhD & Research Data</button>
-    </div>
-    <table>
-        <thead id="module-table-header">
-            
-        </thead>
-        <tbody id="module-table-body">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="undergraduate.html">Undergraduate Data</a></li>
+        <li><a href="postgraduate.html">Postgraduate Data</a></li>
+        <li><a class="active" href="phd.html">Research Data</a></li>
+    </ul>
+    <div id="module-info" class="module-container">
+        <div class="dataButton" id="dataButton">
+            <button class="button" type="button" onclick="handleButtonClick(3)">Retrieve PhD & Research Data</button>
+        </div>
+        <table>
+            <thead id="module-table-header">
 
-        </tbody>
-    </table>
+            </thead>
+            <tbody id="module-table-body">
+
+            </tbody>
+        </table>
+    </div>
 </body>
 
 </html>
